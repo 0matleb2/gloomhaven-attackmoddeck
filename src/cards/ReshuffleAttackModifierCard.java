@@ -11,7 +11,7 @@ public class ReshuffleAttackModifierCard extends AttackModifierCard {
 	@Override
 	public void handleReshuffle() {
 		deckCallback.shuffle();
-		System.out.println("Deck reshuffled");
+		System.out.println("~Deck reshuffled~\n");
 	}
 
 }

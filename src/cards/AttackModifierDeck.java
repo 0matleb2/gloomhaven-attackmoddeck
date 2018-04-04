@@ -30,15 +30,28 @@ public class AttackModifierDeck implements IAttackModifierDeck {
 		addXCards(AttackModifierCardType.CRITICAL, critical);
 		
 		shuffle();
+		
+		System.out.println("New Attack Modifier deck created with: ");
+		System.out.println("\t" + Integer.toString(miss) + " [Miss Ø] cards");
+		System.out.println("\t" + Integer.toString(lame) + " [Lame -2] cards");
+		System.out.println("\t" + Integer.toString(weak) + " [Weak -1] cards");
+		System.out.println("\t" + Integer.toString(decent) + " [Decent +0] cards");
+		System.out.println("\t" + Integer.toString(keen) + " [Keen +1] cards");
+		System.out.println("\t" + Integer.toString(powerful) + " [Powerful +2] cards");
+		System.out.println("\t" + Integer.toString(critical) + " [Critical 2x] cards\n");
 	}
 
 	@Override
 	public String draw() {
 		IAttackModifierCard drawnCard = deck.pop();
 		discardPile.push(drawnCard);
+		
+		String cardString = "\nDRAW: [" + drawnCard.getName() + " " + drawnCard.getModifier() +"]\n";
+		System.out.println(cardString);
+		
 		drawnCard.handleReshuffle();
 		
-		return drawnCard.getName() + " " + drawnCard.getModifier();
+		return cardString;
 	}
 
 	@Override
