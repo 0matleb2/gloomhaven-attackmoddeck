@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
@@ -32,6 +33,7 @@ public class GUI {
 	private JFrame frmSnowblindsGloomhavenAttack;
 	private ArrayList<JLabel> drawnCardLabels;
 	private JLabel lblShuffle;
+	private JLabel lblMask;
 	private IAttackModifierDeck deck;
 
 	/**
@@ -76,6 +78,21 @@ public class GUI {
 		frmSnowblindsGloomhavenAttack.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
+		JPanel maskPanel = new JPanel();
+		maskPanel.setBounds(297, 295, 437, 296);
+		maskPanel.setLayout(new BorderLayout());
+		maskPanel.setOpaque(true);
+		maskPanel.setVisible(true);
+		panel.add(maskPanel);
+		
+		lblMask = new JLabel("");
+		lblMask.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 245, 238), new Color(245, 222, 179), null, null));
+		lblMask.setBackground(new Color(10, 10, 10, 20));
+		lblMask.setOpaque(true);
+		lblMask.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMask.setVisible(false);
+		maskPanel.add(lblMask, BorderLayout.CENTER);
+		
 		lblShuffle = new JLabel("");
 		lblShuffle.setIcon(new ImageIcon(GUI.class.getResource("/icons/Reshuffle.png")));
 		lblShuffle.setBounds(484, 603, 47, 46);
@@ -102,7 +119,6 @@ public class GUI {
 		lblBless.setBounds(297, 294, 437, 296);
 		drawnCardLabels.add(lblBless);
 		lblBless.setVisible(false);
-		
 		panel.add(lblBless);
 		
 		JLabel lblDoubleDamage = new JLabel("");
@@ -276,7 +292,8 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				for (JComponent drawnCardLabel : drawnCardLabels) {
-					moveJComponent(new Point(location.x, location.y + 1), drawnCardLabel);	
+					moveJComponent(new Point(location.x, location.y + 1), drawnCardLabel);
+					lblMask.setVisible(true);
 				}		
 			}
 
@@ -284,6 +301,7 @@ public class GUI {
 			public void mouseReleased(MouseEvent e) {
 				for (JComponent drawnCardLabel : drawnCardLabels) {
 					moveJComponent(location, drawnCardLabel);	
+					lblMask.setVisible(false);
 				}				
 			}
 
