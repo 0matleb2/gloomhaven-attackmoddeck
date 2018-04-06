@@ -1,13 +1,15 @@
 package cards;
 
 public enum AttackModifierCardType {
-	MISS("�", "Miss"),
-	LAME("-2", "Lame"),
-	WEAK("-1", "Weak"),
-	DECENT("+0", "Decent"),
-	KEEN("+1", "Keen"),
-	POWERFUL("+2", "Powerful"),
-	CRITICAL("2x", "Critical");
+	CURSE("⚡Ø⚡", "Curse"),
+	MISS("Ø", "Miss"),
+	MINUSTWO("-2", "Lame"),
+	MINUSONE("-1", "Weak"),
+	NEUTRAL("+0", "Decent"),
+	PLUSONE("+1", "Keen"),
+	PLUSTWO("+2", "Powerful"),
+	DOUBLEDAMAGE("2x", "Critical"),
+	BLESS("✞2x✞", "Bless");
 	
 	private String attackModifier;
 	private String name;

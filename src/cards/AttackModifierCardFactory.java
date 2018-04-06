@@ -25,22 +25,22 @@ public class AttackModifierCardFactory {
 		case MISS:
 			newCard = new ReshuffleAttackModifierCard(type, deck);
 			break;
-		case LAME:
+		case MINUSTWO:
 			newCard = new StandardAttackModifierCard(type, deck);
 			break;
-		case WEAK:
+		case MINUSONE:
 			newCard = new StandardAttackModifierCard(type, deck);
 			break;
-		case DECENT:
+		case NEUTRAL:
 			newCard = new StandardAttackModifierCard(type, deck);
 			break;
-		case KEEN:
+		case PLUSONE:
 			newCard = new StandardAttackModifierCard(type, deck);
 			break;
-		case POWERFUL:
+		case PLUSTWO:
 			newCard = new StandardAttackModifierCard(type, deck);
 			break;
-		case CRITICAL:
+		case DOUBLEDAMAGE:
 			newCard = new ReshuffleAttackModifierCard(type, deck);
 			break;
 		}

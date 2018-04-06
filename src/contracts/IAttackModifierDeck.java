@@ -1,8 +1,10 @@
 package contracts;
 
+import cards.AttackModifierCard;
+
 public interface IAttackModifierDeck {
 	
-	public String draw();
+	public IAttackModifierCard draw();
 	public void shuffle();
 	public String probabilities();
 	

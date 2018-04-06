@@ -28,12 +28,12 @@ public class AttackModifierDeck implements IAttackModifierDeck {
 		numCardsInDeckbyType.addAll(Arrays.asList(miss, lame, weak, decent, keen, powerful, critical));
 		
 		addXCards(AttackModifierCardType.MISS, miss);
-		addXCards(AttackModifierCardType.LAME, lame);
-		addXCards(AttackModifierCardType.WEAK, weak);
-		addXCards(AttackModifierCardType.DECENT, decent);
-		addXCards(AttackModifierCardType.KEEN, keen);
-		addXCards(AttackModifierCardType.POWERFUL, powerful);
-		addXCards(AttackModifierCardType.CRITICAL, critical);
+		addXCards(AttackModifierCardType.MINUSTWO, lame);
+		addXCards(AttackModifierCardType.MINUSONE, weak);
+		addXCards(AttackModifierCardType.NEUTRAL, decent);
+		addXCards(AttackModifierCardType.PLUSONE, keen);
+		addXCards(AttackModifierCardType.PLUSTWO, powerful);
+		addXCards(AttackModifierCardType.DOUBLEDAMAGE, critical);
 		
 		shuffle();
 		
@@ -48,7 +48,7 @@ public class AttackModifierDeck implements IAttackModifierDeck {
 	}
 
 	@Override
-	public String draw() {
+	public IAttackModifierCard draw() {
 		IAttackModifierCard drawnCard = deck.pop();
 		discardPile.push(drawnCard);
 		
@@ -57,7 +57,7 @@ public class AttackModifierDeck implements IAttackModifierDeck {
 		
 		drawnCard.handleReshuffle();
 		
-		return cardString;
+		return drawnCard;
 	}
 
 	@Override
