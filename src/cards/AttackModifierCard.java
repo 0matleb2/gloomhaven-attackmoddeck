@@ -13,14 +13,9 @@ public abstract class AttackModifierCard implements IAttackModifierCard {
 		this.deckCallback = deck;
 	}
 
-	@Override
-	public String getModifier() {
-		return type.getAttackModifier();
-	}
-
-	@Override
-	public String getName() {
-		return type.getName();
+	
+	public String getString() {
+		return type.getAttackModifier() + " " + type.getName();
 	}
 	
 	public abstract void handleReshuffle();

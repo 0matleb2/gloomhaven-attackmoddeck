@@ -2,8 +2,7 @@ package contracts;
 
 public interface IAttackModifierCard {
 	
-	public String getModifier();
-	public String getName();
+	public String getString();
 	public void handleReshuffle();
 	
 }

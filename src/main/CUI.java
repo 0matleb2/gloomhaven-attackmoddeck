@@ -5,12 +5,13 @@ import java.util.Scanner;
 import cards.AttackModifierDeck;
 import contracts.IAttackModifierDeck;
 
-public class Driver {
+public class CUI {
 
 	public static void main(String[] args) {
 
-		println("Gloomhaven Attack Modifier Deck");
-		println("===============================");
+		println("*************************************");
+		println("| GLOOMHAVEN - Attack Modifier Deck |");
+		println("*************************************");
 		println();
 		
 		boolean appRunning = true;
@@ -35,6 +36,10 @@ public class Driver {
 				case "r":
 				case "R":
 					sessionRunning = false;
+					break;
+				case "i":
+				case "I":
+					deck.probabilities();
 					break;
 				case "q":
 				case "Q":
